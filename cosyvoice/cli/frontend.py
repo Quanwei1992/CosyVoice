@@ -133,7 +133,7 @@ class CosyVoiceFrontEnd:
             texts = list(split_paragraph(text, partial(self.tokenizer.encode, allowed_special=self.allowed_special), "en", token_max_n=80,
                                          token_min_n=60, merge_len=20, comma_split=False))
         if split is False:
-            return text
+            return ["".join(texts)]
         return texts
 
     def frontend_sft(self, tts_text, spk_id):
